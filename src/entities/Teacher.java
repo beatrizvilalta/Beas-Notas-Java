@@ -43,15 +43,19 @@ public class Teacher {
 
         int result = 0;
         for (StudentExam currentStudentExam : studentExamList) {
-            for (String currentStudentAnswer : currentStudentExam.getAnswer()){
-                for (String currentAnswer : answerKey.getAnswer()) {
-                    if (currentAnswer.equals(currentStudentAnswer)) {
-                        result = result + 1;
-                        currentStudentExam.setCorrectAnswer(result);
+            System.out.println("Name: " + currentStudentExam.getName());
+            System.out.println("Enrolment: " + currentStudentExam.getEnrolment());
+            System.out.println();
+                for (int j = 0; j < answerKey.getNumberOfQuestions(); j++) {
+                    if (answerKey.answer.get(j).equals(currentStudentExam.answer.get(j))){
+                       result = result + 1;
+                       currentStudentExam.setCorrectAnswer(result);
+                        System.out.println((j + 1) + ") " + currentStudentExam.answer.get(j) + " CORRECT");
+                    } else {
+                        System.out.println((j + 1) + ") " + currentStudentExam.answer.get(j) + " WRONG");
                     }
                 }
-            }
-
+            System.out.println();
         }
     }
 

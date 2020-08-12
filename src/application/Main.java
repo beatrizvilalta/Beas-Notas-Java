@@ -59,7 +59,7 @@ public class Main {
                 String studentAnswer = sc.nextLine();
                 studentExam.addAnswer(studentAnswer);
             }
-            teacher.calculateNumberOfCorrectAnswers();
+
             System.out.println();
         }
 
@@ -67,10 +67,11 @@ public class Main {
         System.out.println("Check the answer key: ");
         //GABARITO
         exam.printAnswerKey();
+        System.out.println();
 
         //Resposta dos alunos
         System.out.println("Check the students answer: ");
-        teacher.printStudentsAnswer();
+        teacher.calculateNumberOfCorrectAnswers();
 
         // mostrar notas
 
