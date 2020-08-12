@@ -50,7 +50,6 @@ public class Teacher {
     }
 
     public void checkCorrectAnswers(StudentExam currentStudentExam) {
-
         int result = 0;
         for (int j = 0; j < answerKey.getNumberOfQuestions(); j++) {
             if (answerKey.answer.get(j).equals(currentStudentExam.answer.get(j))){

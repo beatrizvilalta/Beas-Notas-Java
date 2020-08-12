@@ -66,7 +66,7 @@ public class Main {
         System.out.println();
         System.out.println("Check the answer key: ");
         //GABARITO
-        exam.printAnswerKey();
+        System.out.println(exam.getAnswerKey());
         System.out.println();
 
         //RESPOSTAS DOS ALUNOS
@@ -76,12 +76,6 @@ public class Main {
         //MOSTRAR AS NOTAS
         System.out.println();
         teacher.showGrades();
-
-
-
-
-
-
 
     }
 

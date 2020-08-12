@@ -42,11 +42,12 @@ public class Exam {
         return (double) overallScore / numberOfQuestions;
     }
 
-    public void printAnswerKey() {
+    public List<String> getAnswerKey() {
+        List<String> formattedAnswerKey = new ArrayList<>();
         for (String currentAnswer : answer){
-            System.out.println((answer.indexOf(currentAnswer) + 1) + ") " + currentAnswer);
+            formattedAnswerKey.add((answer.indexOf(currentAnswer) + 1) + ") " + currentAnswer);
         }
+        return formattedAnswerKey;
     }
-
 
 }
