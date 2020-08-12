@@ -36,8 +36,8 @@ public class StudentExam extends Exam {
         this.correctAnswer = correctAnswer;
     }
 
-    public double score(int correctAnswers) {
-        return (double) correctAnswers * pointsForEachQuestion();
+    public double score() {
+        return (double) correctAnswer * pointsForEachQuestion();
     }
 
 

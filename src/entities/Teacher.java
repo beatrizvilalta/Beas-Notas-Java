@@ -41,30 +41,40 @@ public class Teacher {
 
     public void calculateNumberOfCorrectAnswers() {
 
-        int result = 0;
         for (StudentExam currentStudentExam : studentExamList) {
-            System.out.println("Name: " + currentStudentExam.getName());
-            System.out.println("Enrolment: " + currentStudentExam.getEnrolment());
+            printStudentsData(currentStudentExam);
             System.out.println();
-                for (int j = 0; j < answerKey.getNumberOfQuestions(); j++) {
-                    if (answerKey.answer.get(j).equals(currentStudentExam.answer.get(j))){
-                       result = result + 1;
-                       currentStudentExam.setCorrectAnswer(result);
-                        System.out.println((j + 1) + ") " + currentStudentExam.answer.get(j) + " CORRECT");
-                    } else {
-                        System.out.println((j + 1) + ") " + currentStudentExam.answer.get(j) + " WRONG");
-                    }
-                }
+            checkCorrectAnswers(currentStudentExam);
             System.out.println();
         }
     }
 
-    public void printStudentsAnswer() {
-        for (StudentExam currentStudent : studentExamList) {
+    public void checkCorrectAnswers(StudentExam currentStudentExam) {
+
+        int result = 0;
+        for (int j = 0; j < answerKey.getNumberOfQuestions(); j++) {
+            if (answerKey.answer.get(j).equals(currentStudentExam.answer.get(j))){
+                result = result + 1;
+                currentStudentExam.setCorrectAnswer(result);
+                System.out.println((j + 1) + ") " + currentStudentExam.answer.get(j) + " CORRECT");
+            } else {
+                System.out.println((j + 1) + ") " + currentStudentExam.answer.get(j) + " WRONG");
+            }
+        }
+    }
+
+    public void printStudentsData(StudentExam currentStudent) {
             System.out.println("Name: " + currentStudent.getName());
             System.out.println("Enrolment: " + currentStudent.getEnrolment());
-            currentStudent.printAnswerKey();
+
+    }
+
+    public void showGrades() {
+        for (StudentExam currentStudent : studentExamList) {
+            printStudentsData(currentStudent);
+            System.out.println("Grade: " + String.format("%.1f", currentStudent.score()));
             System.out.println();
         }
     }
+
 }

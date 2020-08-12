@@ -69,12 +69,13 @@ public class Main {
         exam.printAnswerKey();
         System.out.println();
 
-        //Resposta dos alunos
+        //RESPOSTAS DOS ALUNOS
         System.out.println("Check the students answer: ");
         teacher.calculateNumberOfCorrectAnswers();
 
-        // mostrar notas
-
+        //MOSTRAR AS NOTAS
+        System.out.println();
+        teacher.showGrades();
 
 
 
